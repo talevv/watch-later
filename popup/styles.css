@@ -19,14 +19,25 @@ main * {
 /*form*/
 .movies-form {
   box-sizing: border-box;
-  width: 100%;
+  /*width: 100%;*/
 }
 
-.movies-form > input[type="text"] {
+.movies-form > input[type="text"], .movies-form > input[type="url"]{
   width: 100%;
   border-radius: 4px;
   display: block;
   margin-bottom: .5rem;
+  border: 1px solid rgb(207, 207, 207);
+  height: 1.3rem;
+  color: #333;
+  font-weight: bolder;
+  font-size: .75rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+}
+
+input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
+  font-weight: normal;
 }
 
 .movies-form > input[name="time"] {
@@ -51,6 +62,7 @@ main * {
   font-weight: bolder;
   display: block;
   margin-bottom: .5rem;
+  color: #333;
 }
 
 /*divider*/
@@ -78,8 +90,9 @@ main * {
 }
 
 .movies-list__movie-title {
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: .75rem;
+  line-height: 1rem;
+  margin-bottom: .5rem;
   color: #333;
 }
 
