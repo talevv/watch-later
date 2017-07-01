@@ -18,7 +18,7 @@ let fillForm = (form, movie) => {
 
 let checkMovie = (movie) => {
   // if it's YT movie
-  if(movie.url.search("youtube") != -1) {
+  if(movie.url.search("youtube.com/watch") != -1) {
     let time = movie.time.split(":");
     let timeString = "";
     if(time.length == 2) {
@@ -190,10 +190,6 @@ let setupForm = (form) => {
 let moviesList = document.querySelector("#movies-list");
 let moviesForm = document.querySelector("#movies-form");
 setupForm(moviesForm);
-
-
-
-
 
 let submit = (event) => {
   event.preventDefault();

@@ -2,7 +2,7 @@
 let getURL = () => window.location.href;
 
 let isYoutube = (url) => {
-  return url.search("youtube") != -1 ? true : false;
+  return url.search("youtube.com/watch") != -1 ? true : false;
 }
 
 let youtubeData = () => {
@@ -14,6 +14,7 @@ let youtubeData = () => {
 let info = (request, sender, sendResponse) => {
 
   let url = getURL();
+  alert(url)
   let movieData = {};
 
   if(isYoutube(url)) {
