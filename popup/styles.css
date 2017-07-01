@@ -54,6 +54,11 @@ input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
   box-sizing: border-box;
   width: 5rem;
   height: 2rem;
+  cursor: pointer;
+}
+
+.movies-form > input[type="submit"]:hover {
+  background: #349567;
 }
 
 .movies-form > label {
@@ -125,4 +130,13 @@ input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
   border: 1px solid #c43b6a;
   color: whitesmoke;
   background: #c43b6a;
+}
+
+.error {
+  color: red;
+  display: block;
+}
+
+.error--hidden {
+  display: none;
 }

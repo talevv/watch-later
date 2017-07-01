@@ -10,10 +10,6 @@ let reverseArray = (array) => {
   return array.reduce((a, b) => [b].concat(a), [])
 }
 
-
-
-
-
 let fillForm = (form, movie) => {
   form.elements.namedItem("title").value = movie.title.trim();
   form.elements.namedItem("url").value = movie.url;
@@ -148,22 +144,57 @@ let init = (moviesList) => {
   });
 }
 
-// start
+let hideError = (formElement) => {
+  return () => {
+    formElement.previousElementSibling.classList.add("error--hidden");
+    formElement.previousElementSibling.textContent = "";
+  }
+}
+
+let setupForm = (form) => {
+  let title = form.elements.namedItem("title");
+  let time = form.elements.namedItem("time");
+  title.addEventListener("keydown", hideError(title));
+  time.addEventListener("keydown", hideError(time));
+}
+
 let moviesList = document.querySelector("#movies-list");
 let moviesForm = document.querySelector("#movies-form");
+setupForm(moviesForm);
 
-moviesForm.addEventListener("submit", (event) => {
+let validation = (titleInput, timeInput) => {
+  let valid = true;
+  if(!titleInput.value.length) {
+    let spanErrorElement = titleInput.previousElementSibling;
+    spanErrorElement.classList.remove("error--hidden");
+    spanErrorElement.textContent = "Title can't be empty";
+    valid = false;
+  }
+  if(!timeInput.value.length) {
+    let spanErrorElement = timeInput.previousElementSibling;
+    spanErrorElement.classList.remove("error--hidden");
+    spanErrorElement.textContent = "Title can't be empty";
+    valid = false;
+  }
+  return valid;
+}
+
+let submit = (event) => {
   event.preventDefault();
   let form = event.target;
-  let title = form.elements.namedItem("title").value;
-  let url = form.elements.namedItem("url").value;
-  let time = form.elements.namedItem("time").value;
-  let movie = {title, url, time};
+  if(validation(form.elements.namedItem("title"), form.elements.namedItem("time"))) {
+    let title = form.elements.namedItem("title").value;
+    let url = form.elements.namedItem("url").value;
+    let time = form.elements.namedItem("time").value;
+    let movie = {title, url, time};
 
-  save(moviesList, movie);
+    save(moviesList, movie);
 
-  form.reset();
-});
+    form.reset();
+  }
+}
+
+moviesForm.addEventListener("submit", submit);
 
 // browser.storage.local.remove("movies");
 init(moviesList);
