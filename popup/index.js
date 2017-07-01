@@ -148,7 +148,15 @@ let hideError = (formElement) => {
   return () => {
     formElement.previousElementSibling.classList.add("error--hidden");
     formElement.previousElementSibling.textContent = "";
+    formElement.classList.remove("input--error");
   }
+}
+
+showError = (formElement, message) => {
+  let spanErrorElement = formElement.previousElementSibling;
+  spanErrorElement.classList.remove("error--hidden");
+  spanErrorElement.textContent = message;
+  formElement.classList.add("input--error");
 }
 
 let setupForm = (form) => {
@@ -162,18 +170,22 @@ let moviesList = document.querySelector("#movies-list");
 let moviesForm = document.querySelector("#movies-form");
 setupForm(moviesForm);
 
+let validateTime = (time) => {
+  let timeReg =  /^(([0-1][0-9])|(2[0-3])|([0-9])):[0-5][0-9]$|^(([0-1][0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]$/;
+  return !timeReg.test(time);
+}
+
 let validation = (titleInput, timeInput) => {
   let valid = true;
   if(!titleInput.value.length) {
-    let spanErrorElement = titleInput.previousElementSibling;
-    spanErrorElement.classList.remove("error--hidden");
-    spanErrorElement.textContent = "Title can't be empty";
+    showError(titleInput, "Title can't be empty")
     valid = false;
   }
   if(!timeInput.value.length) {
-    let spanErrorElement = timeInput.previousElementSibling;
-    spanErrorElement.classList.remove("error--hidden");
-    spanErrorElement.textContent = "Title can't be empty";
+    showError(timeInput, "Time can't be empty")
+    valid = false;
+  } else if(validateTime(timeInput.value)) {
+    showError(timeInput, "Wrong time format")
     valid = false;
   }
   return valid;

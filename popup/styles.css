@@ -133,10 +133,15 @@ input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
 }
 
 .error {
-  color: red;
+  color: #c43b6a;
   display: block;
+  margin: .5rem 0;
 }
 
 .error--hidden {
   display: none;
+}
+
+.input--error {
+  border-color:  #c43b6a !important;
 }
