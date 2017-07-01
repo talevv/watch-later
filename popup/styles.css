@@ -1,0 +1,114 @@
+
+html, body, ul, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 1em;
+}
+
+main {
+  padding: 1rem;
+}
+
+main * {
+  font-family: sans-serif;
+}
+
+/*form*/
+.movies-form {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.movies-form > input[type="text"] {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.movies-form > input[name="time"] {
+  width: 5rem;
+}
+
+.movies-form > input[type="submit"] {
+  right: 0;
+  bottom: 0;
+  background: #F04D84;
+  border: none;
+  border-radius: 4px;
+  color: whitesmoke;
+  box-sizing: border-box;
+  width: 5rem;
+  height: 2rem;
+}
+
+.movies-form > label {
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: bolder;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+/*divider*/
+
+.divider {
+  border: none;
+  border-bottom: 1px solid rgb(217, 217, 217);
+  margin: 1rem 0;
+}
+
+/*movies*/
+
+.movies-list {
+  list-style: none;
+  width: 24rem;
+}
+
+.movies-list__movie {
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.movies-list__movie-title {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #333;
+}
+
+.movies-list__movie-link {
+  color: #F04D84;
+  display: block;
+  word-break: break-all;
+}
+
+.movies-list__movie-time {
+  display: block;
+  margin-top: .5rem;
+}
+
+.movies-list__movie-delete {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  border: 1px solid rgb(217, 217, 217);
+  color: #8f1d44;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: .60rem;
+  height: 1.3rem;
+}
+
+.movies-list__movie-delete:hover {
+  border: 1px solid #8f1d44;
+  color: whitesmoke;
+  background: #8f1d44;
+}
