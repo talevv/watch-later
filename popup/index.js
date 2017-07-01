@@ -159,20 +159,9 @@ showError = (formElement, message) => {
   formElement.classList.add("input--error");
 }
 
-let setupForm = (form) => {
-  let title = form.elements.namedItem("title");
-  let time = form.elements.namedItem("time");
-  title.addEventListener("keydown", hideError(title));
-  time.addEventListener("keydown", hideError(time));
-}
-
-let moviesList = document.querySelector("#movies-list");
-let moviesForm = document.querySelector("#movies-form");
-setupForm(moviesForm);
-
 let validateTime = (time) => {
-  let timeReg =  /^(([0-1][0-9])|(2[0-3])|([0-9])):[0-5][0-9]$|^(([0-1][0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]$/;
-  return !timeReg.test(time);
+  let timeReg =  /^(([0-1][0-9])|(2[0-3])|([0-9])):[0-5][0-9]$|^(([0-1][0-9])|(2[0-3])|([0-9])):[0-5][0-9]:[0-5][0-9]$/;
+  return timeReg.test(time);
 }
 
 let validation = (titleInput, timeInput) => {
@@ -184,12 +173,27 @@ let validation = (titleInput, timeInput) => {
   if(!timeInput.value.length) {
     showError(timeInput, "Time can't be empty")
     valid = false;
-  } else if(validateTime(timeInput.value)) {
+  } else if(!validateTime(timeInput.value)) {
     showError(timeInput, "Wrong time format")
     valid = false;
   }
   return valid;
 }
+
+let setupForm = (form) => {
+  let title = form.elements.namedItem("title");
+  let time = form.elements.namedItem("time");
+  title.addEventListener("keydown", hideError(title));
+  time.addEventListener("keydown", hideError(time));
+}
+
+let moviesList = document.querySelector("#movies-list");
+let moviesForm = document.querySelector("#movies-form");
+setupForm(moviesForm);
+
+
+
+
 
 let submit = (event) => {
   event.preventDefault();
