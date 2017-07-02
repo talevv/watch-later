@@ -91,14 +91,13 @@ let render = (list, movies) => {
   clearList(list);
 
   movies.forEach((movie) => {
-    // create elements
 
+    // create elements
     let listItem     = document.createElement("LI");
     let titleElement = document.createElement("H2");
     let urlElement   = document.createElement("A");
     let timeElement  = document.createElement("TIME");
     let deleteButton = document.createElement("BUTTON");
-
     // set styles
     listItem.className     = "movies-list__movie";
     titleElement.className = "movies-list__movie-title";
@@ -152,7 +151,7 @@ let hideError = (formElement) => {
   }
 }
 
-showError = (formElement, message) => {
+let showError = (formElement, message) => {
   let spanErrorElement = formElement.previousElementSibling;
   spanErrorElement.classList.remove("error--hidden");
   spanErrorElement.textContent = message;

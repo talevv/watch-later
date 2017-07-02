@@ -14,7 +14,7 @@ let youtubeData = () => {
 let info = (request, sender, sendResponse) => {
 
   let url = getURL();
-  alert(url)
+
   let movieData = {};
 
   if(isYoutube(url)) {
@@ -30,7 +30,6 @@ let info = (request, sender, sendResponse) => {
 
   sendResponse({movie: movieData});
 
-  // browser.runtime.onMessage.removeListener(info);
 }
 
 browser.runtime.onMessage.addListener(info);
