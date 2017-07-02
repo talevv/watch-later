@@ -47,7 +47,7 @@ input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
 .movies-form > input[type="submit"] {
   right: 0;
   bottom: 0;
-  background: #4BAF7F;
+  background: #4bc24dfe;
   border: none;
   border-radius: 4px;
   color: whitesmoke;
@@ -58,7 +58,7 @@ input[type="text"]:placeholder-shown, input[type="url"]:placeholder-shown {
 }
 
 .movies-form > input[type="submit"]:hover {
-  background: #349567;
+  background: #389a39fe;
 }
 
 .movies-form > label {
