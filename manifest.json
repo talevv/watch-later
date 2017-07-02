@@ -2,9 +2,10 @@
 
   "manifest_version": 2,
   "name": "Watch Later",
+  "author": "Tadeusz Lewandowski",
   "version": "1.0",
-  "description": "",
-  "homepage_url": "https://github.com/tadeusz-lewandowski/watch-it-later",
+  "description": "Allows you to add any video to the list of 'to watch' in easy way. Watch Later allows you to save title, link to the video and time when you end watching video. Supports autofill data for Youtube.",
+  "homepage_url": "https://github.com/tadeusz-lewandowski/watch-later",
   "icons": {
     "48": "icons/watch-later-48.png",
     "96": "icons/watch-later-96.png"

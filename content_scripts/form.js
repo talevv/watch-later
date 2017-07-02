@@ -12,7 +12,7 @@
   }
 
   let info = (request, sender, sendResponse) => {
-    console.log("test")
+
     let url = getURL();
 
     let movieData = {};
