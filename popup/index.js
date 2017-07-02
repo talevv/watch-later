@@ -207,5 +207,4 @@ let submit = (event) => {
 
 moviesForm.addEventListener("submit", submit);
 
-// browser.storage.local.remove("movies");
 init(moviesList);
