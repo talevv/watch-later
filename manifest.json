@@ -17,7 +17,7 @@
   "browser_action": {
     "browser_style": true,
     "default_icon": "icons/watch-later-32.png",
-    "default_title": "Paccoon-movies",
+    "default_title": "Watch Later",
     "default_popup": "popup/index.html"
   }
 
