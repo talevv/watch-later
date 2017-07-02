@@ -1,11 +1,11 @@
 {
 
   "manifest_version": 2,
-  "name": "Beastify",
+  "name": "Watch It Later",
   "version": "1.0",
 
-  "description": "Adds a browser action icon to the toolbar. Click the button to choose a beast. The active tab's body content is then replaced with a picture of the chosen beast. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#beastify",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "description": "",
+  "homepage_url": "https://github.com/tadeusz-lewandowski/watch-it-later",
 
   "permissions": [
     "activeTab",
