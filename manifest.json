@@ -1,17 +1,18 @@
 {
 
   "manifest_version": 2,
-  "name": "Watch It Later",
+  "name": "Watch Later",
   "version": "1.0",
-
   "description": "",
   "homepage_url": "https://github.com/tadeusz-lewandowski/watch-it-later",
-
+  "icons": {
+    "48": "icons/watch-later-48.png",
+    "96": "icons/watch-later-96.png"
+  },
   "permissions": [
     "activeTab",
     "storage"
   ],
-
   "browser_action": {
     "browser_style": true,
     "default_icon": "icons/watch-later-32.png",
