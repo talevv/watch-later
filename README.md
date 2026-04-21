@@ -1,6 +1,6 @@
-# Watch Later Easier (Firefox Extension)
+# Watch Later (Firefox Extension)
 
-**Watch Later Easier** is a lightweight Firefox extension that simplifies how you save and access YouTube videos. It provides a faster, more direct alternative to manually managing YouTube’s built-in “Watch Later” playlist.
+**Watch Later** is a lightweight Firefox extension that simplifies how you save and access YouTube videos. It provides a faster, more direct alternative to manually managing YouTube’s built-in “Watch Later” playlist.
 
 ## What It Does
 
